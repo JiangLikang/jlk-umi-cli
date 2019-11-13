@@ -14,6 +14,10 @@ export default ({
 }) => {
   const columns = [
     {
+      title: '序号',
+      dataIndex: 0,
+      render: (text, record, index) => `${(pagination.current-1)*pagination.pageSize+index+1}` ,
+    }, {
       title: '用户名',
       dataIndex: 'name',
       render: name => `${name.first} ${name.last}`,
@@ -37,7 +41,7 @@ export default ({
       dataIndex: 'dob.date',
     }, {
       title: '操作',
-      fixed: 'right',
+      // fixed: 'right',
       render: (text, record) => (
         <span>
           <a onClick={handleDeliver.bind(this,record)}>发布</a>
@@ -59,8 +63,9 @@ export default ({
 
   const tableProps = {
     ...restProps,
-    scroll: { x: 1300},
+    scroll: { x: true},
     columns,
+    size: "middle",
     pagination: false,
     rowKey: record => record.login.uuid,
   };

@@ -52,7 +52,7 @@ const Page = ({
   };
   const listProps = {
     pagination,
-    loading: loading.effects[`${namespace}/queryList`,`${namespace}/deliver`],
+    loading: loading.effects[`${namespace}/queryList`]||loading.effects[`${namespace}/deliver`],
     dataSource: list,
     onPageChange(page, pageSize) {
       console.log('当前选择的页码:',page)
@@ -136,7 +136,7 @@ const Page = ({
   }
 
   return (
-    <Card bordered={false}>
+    <Card bordered={false} style={{minWidth:'1280px'}}>
       <Search {...searchProps} />
       <List {...listProps} />
       <AddModal {...modalProps} />

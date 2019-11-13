@@ -3,7 +3,7 @@ import { Pagination } from 'antd';
 
 export default props => {
   const paginationProps = {
-    // showSizeChanger: true,
+    showSizeChanger: true,
     showQuickJumper: true,
     hideOnSinglePage: false,
     pageSizeOptions: ['10', '20', '50', '100'],

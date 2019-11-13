@@ -4,6 +4,12 @@
  */
 
 module.exports = {
+  rules: [
+    {
+      test: /\.less$/,
+      loader: 'less-loader', // compiles Less to CSS
+    },
+  ],
   resolve: {
     alias: {
       '@': require('path').resolve(__dirname, 'src'),

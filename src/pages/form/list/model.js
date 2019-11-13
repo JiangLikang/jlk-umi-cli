@@ -28,7 +28,6 @@ export default {
   },
   effects: {
     *deliver({ payload = {} }, { select, put, call }) {
-      console.log('发送给接口待删除的行数据:',payload)
       let response = yield call(deleteRow,payload)
       return response
     },
@@ -54,6 +53,7 @@ export default {
       const offset = (current-1)*pageSize
       let data = yield call(getTableList,{
         ...payload,
+        current,
         pageSize,
         offset
       })

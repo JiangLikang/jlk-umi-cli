@@ -5,7 +5,7 @@ import setting from './zh-CN/setting';
 import settingSkin from './zh-CN/setting-skin';
 
 export default {
-  title: '中间件框架演示',
+  title: '江江的个人脚手架',
   ...globalHeader,
   ...menu,
   ...exception,

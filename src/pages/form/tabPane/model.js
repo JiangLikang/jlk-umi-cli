@@ -29,8 +29,18 @@ export default {
       let { pagination,tab } = yield select(state => state.tabPane);
       const current = payload.current || pagination.current;
       const pageSize = payload.pageSize || pagination.pageSize;
-      console.log('前端发送的参数为:',payload)
-      let data = yield call(getTabTableList,payload)
+      const offset = (current-1)*pageSize
+      console.log('前端发送的参数为:',{
+        ...payload,
+        current,
+        pageSize,
+        offset
+      })
+      let data = yield call(getTabTableList,{
+        ...payload,
+        pageSize,
+        offset,
+      })
       console.log('接口传回的数据:',data )
       yield put({
         type: 'save',

@@ -1,5 +1,5 @@
 export default {
-  'menu.form': '模板管理',
+  'menu.form': '表单/查询列表相关模板',
   'menu.form.submit': '表单提交',
   'menu.form.list': '查询列表',
   'menu.form.detail': '详情展示',

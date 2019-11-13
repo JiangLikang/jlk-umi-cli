@@ -35,7 +35,7 @@ const TabList = ({
       dataIndex: 'job',
     }, {
       title: '操作',
-      fixed: 'right',
+      // fixed: 'right',
       render: (text, record) => (
         <span>
           <a onClick={handleDeliver.bind(this,record)}>发布</a>
@@ -61,10 +61,11 @@ const TabList = ({
     pagination,
     loading: loading.effects[`${namespace}/queryList`],
     dataSource: list,
-    scroll: { x: 1300},
+    scroll: { x: true},
     columns,
+    size: "middle",
     pagination: false,
-    rowKey: record => record.id,
+    rowKey: (record,index) => index,
   };
 
   const paginationProps = {
@@ -81,8 +82,15 @@ const TabList = ({
         payload: params
       })
     },
-    onShowSizeChange(current, size) {
-    }
+    onShowSizeChange(current,size) { 
+      dispatch({
+        type:`${namespace}/save`,
+          payload:{pagination:{...pagination,pageSize:size,current:current}}
+      })
+      dispatch({ 
+        type: `${namespace}/queryList`,
+      });
+    },
   };
 
   const callback = (key) => {
