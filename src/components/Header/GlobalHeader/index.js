@@ -1,15 +1,19 @@
 import { Icon } from 'antd';
 import RightContent from './RightContent';
 import styles from './index.less';
+import { useState } from 'react';
 
 export default ({
   collapsed,
   onCollapse
 }) => {
+  const [isFullScreen,setIsFullScreen] = useState(false)
+
   const toggle = () => {
     onCollapse(!collapsed);
   }
   const toggleFullScreen = () => {
+    setIsFullScreen(!isFullScreen)
     if(
       !document.fullscreenElement &&
       !document.mozFullScreenElement &&
@@ -44,7 +48,7 @@ export default ({
         <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
       </span>
       <span className={styles.trigger} onClick={toggleFullScreen}>
-        <Icon type="fullscreen" />
+        <Icon type={isFullScreen ? "fullscreen-exit" : "fullscreen"} />
       </span>
       <RightContent />
     </div>
