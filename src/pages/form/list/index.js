@@ -136,7 +136,7 @@ const Page = ({
   }
 
   return (
-    <Card bordered={false} style={{minWidth:'1280px'}}>
+    <Card bordered={false} >
       <Search {...searchProps} />
       <List {...listProps} />
       <AddModal {...modalProps} />

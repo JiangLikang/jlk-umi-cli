@@ -98,8 +98,8 @@ class PageLayout extends PureComponent {
     return (
       <React.Fragment>
         <DocumentTitle title={getPageTitle(location.pathname, breadcrumbNameMap, true)}>
-          {/* { nav === '1' ? layoutWrap : layout } */}
-          {layoutWrap }
+          { nav === '1' ? layoutWrap : layout }
+          {/* {layoutWrap } */}
         </DocumentTitle>
       </React.Fragment>
     )

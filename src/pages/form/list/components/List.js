@@ -41,7 +41,7 @@ export default ({
       dataIndex: 'dob.date',
     }, {
       title: '操作',
-      // fixed: 'right',
+      fixed: 'right',
       render: (text, record) => (
         <span>
           <a onClick={handleDeliver.bind(this,record)}>发布</a>
