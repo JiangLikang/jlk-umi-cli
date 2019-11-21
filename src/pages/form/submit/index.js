@@ -20,6 +20,7 @@ const Submit = ({
   form: { getFieldDecorator, validateFields,setFields,getFieldValue,setFieldsValue },
   ...restProps
 }) => {
+  console.log("url参数:",location.query)
   // 不可选择的时间
   const disabledDate = (current) => {
     return current && current > moment().endOf('day');

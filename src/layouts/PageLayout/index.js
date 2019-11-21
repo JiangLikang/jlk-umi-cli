@@ -67,7 +67,7 @@ class PageLayout extends PureComponent {
         });
       }
     }
-
+    
     const layoutWrap = (
       <Layout>
         <SiderBar {...siderBarProps} />
@@ -78,7 +78,7 @@ class PageLayout extends PureComponent {
           }}>
           <Header {...headerProps} />
           <Content>
-            {children}
+            { children }
           </Content>
           {/* <Footer /> */}
         </Layout>

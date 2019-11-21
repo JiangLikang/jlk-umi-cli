@@ -99,7 +99,7 @@ const Search = ({
                   message: '请选择日期',
                 },
               ],
-            })(<DatePicker disabledDate={disabledDate} />)}
+            })(<DatePicker disabledDate={disabledDate} className={styles.searchInput}/>)}
           </Form.Item>
         </Col>
         <Col {...formLayout}>

@@ -1,12 +1,7 @@
-
 // ref: https://umijs.org/config/
 import { primaryColor } from '../src/default.setting';
 import pageRoutes from './router.config'
 import webpackPlugin from './plugin.config';
-
-
-// const targetUrl = 'http://10.50.6.38:8081'; // 后端本地
-// const targetUrl = 'https://v1test.tf56.com'; // 测试
 
 export default {
   treeShaking: true,

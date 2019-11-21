@@ -4,6 +4,7 @@ export default [
     name: 'form',
     hideInMenu: false,
     icon: 'form',
+    // Routes: ["./routes/PrivateRoute.js"],  //路由守卫
     routes: [
       {
         path: '/form/submit',
@@ -24,6 +25,10 @@ export default [
         path: '/form/tabPane',
         name: 'tabPane',
         component: './form/tabPane',
+      },
+      {
+        path: '/form/:name',
+        component: './form/$name',
       },
     ]
   }
