@@ -15,6 +15,7 @@ const Page = ({
   visible,
   options,
   query,
+  columns,
   ...restProps
 }) => {
   const searchProps = {
@@ -51,6 +52,7 @@ const Page = ({
     }
   };
   const listProps = {
+    columns,
     pagination,
     loading: loading.effects[`${namespace}/queryList`]||loading.effects[`${namespace}/deliver`],
     dataSource: list,
@@ -115,6 +117,14 @@ const Page = ({
           } else {
             message.error('删除失败')
           }
+      })
+    },
+    onDragEnd(fromIndex, toIndex) {
+      const item = columns.splice(fromIndex, 1)[0];
+      columns.splice(toIndex, 0, item);
+      dispatch({
+        type: `${namespace}/save`,
+        payload: columns
       })
     }
   };

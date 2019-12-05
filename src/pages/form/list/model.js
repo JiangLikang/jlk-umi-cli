@@ -13,6 +13,56 @@ export default {
     pagination,
     visible: false,
     options:[],
+    columns: [
+      {
+        title: '序号',
+        dataIndex: 0,
+        render: (text, record, index) => `${(pagination.current-1)*pagination.pageSize+index+1}` ,
+      }, {
+        title: '用户名',
+        dataIndex: 'name',
+        render: name => `${name.first} ${name.last}`,
+      }, 
+      {
+        title: '年龄',
+        dataIndex: 'dob.age',
+      }, {
+        title: '性别',
+        dataIndex: 'gender',
+      }, {
+        title: '邮箱',
+        width:'200',
+        dataIndex: 'email',
+      }, {
+        title: '电话号码',
+        width:'200',
+        dataIndex: 'phone',
+      }, {
+        title: '日期',
+        width:'200',
+        dataIndex: 'dob.date',
+      }, 
+      // {
+      //   title: '操作',
+      //   // fixed: 'right',
+      //   render: (text, record) => (
+      //     <span>
+      //       <a onClick={handleDeliver.bind(this,record)}>发布</a>
+      //       <Divider type="vertical" />
+      //       <a onClick={handleUpdate.bind(this,record)}>编辑</a>
+      //       <Divider type="vertical" />
+      //       <a onClick={handleUpdate2.bind(this,record)}>编辑(跳页)</a>
+      //       <Divider type="vertical" />
+      //       <a>详情</a>
+      //       <Divider type="vertical" />
+      //       <Popconfirm placement="left" title={'确认删除？'} onConfirm={onConfirmDelete.bind(this,record)} okText="确定" cancelText="取消">
+      //         <a>删除</a>
+      //       </Popconfirm>
+    
+      //     </span>
+      //   ),
+      // },
+    ]
   },
   
   subscriptions: {
