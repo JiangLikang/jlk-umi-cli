@@ -2,28 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Table, Divider, Popconfirm, } from 'antd';
 import { Pagination } from '@/components';
 import ReactDragListView from 'react-drag-listview';
-// import ResizeableTitle from './ResizeableTitle'
-import { Resizable } from 'react-resizable';
-
-const ResizeableTitle = props => {
-  const { onResize, width, ...restProps } = props;
-
-  if (!width) {
-    return <th {...restProps} />;
-  }
-
-  return (
-    <Resizable
-      width={width}
-      height={0}
-      onResize={onResize}
-      draggableOpts={{ enableUserSelectHack: false }}
-    >
-      <th {...restProps} />
-    </Resizable>
-  );
-};
-
 
 export default ({
   onPageChange,
@@ -82,7 +60,6 @@ export default ({
       ),
     },
   ]
-  // const columns = initColumns
 
   const [columns, setColumns] = useState(initColumns)
 

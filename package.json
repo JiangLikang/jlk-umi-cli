@@ -23,7 +23,6 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^16.7.0",
     "react-drag-listview": "^0.1.6",
-    "react-resizable": "^1.10.1",
     "request": "^2.88.0",
     "reqwest": "^2.0.5"
   },
