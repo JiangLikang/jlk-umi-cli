@@ -119,14 +119,6 @@ const Page = ({
           }
       })
     },
-    onDragEnd(fromIndex, toIndex) {
-      const item = columns.splice(fromIndex, 1)[0];
-      columns.splice(toIndex, 0, item);
-      dispatch({
-        type: `${namespace}/save`,
-        payload: columns
-      })
-    }
   };
 
   const modalProps = {
