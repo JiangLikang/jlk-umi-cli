@@ -13,7 +13,8 @@ export const isDuringDate = (beginDateStr, endDateStr) => {
   }
   return false;
 }
-// isDuringDate('2020/05/01', '2020/05/08') == false
+// isDuringDate('2020/09/17 13:00', '2020/09/17 15:00');
+// isDuringDate('2018-09-17 13:00', '2019-09-17 15:00');
 
 
 // 是否逾期函数
