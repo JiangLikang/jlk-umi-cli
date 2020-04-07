@@ -15,6 +15,17 @@ export const isDuringDate = (beginDateStr, endDateStr) => {
 }
 // isDuringDate('2020/05/01', '2020/05/08') == false
 
+
+// 是否逾期函数
+export const isOverdue = (endDateStr) => {
+  var curDate = new Date(),
+      endDate = new Date(endDateStr);
+  if (curDate > endDate) {
+      return true;
+  }
+  return false;
+}
+
 // 时间戳转时间函数
 export const timestampToTime = timestamp => {
   var date = new Date(timestamp);
